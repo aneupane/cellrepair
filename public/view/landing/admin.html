@@ -1,0 +1,96 @@
+<div style="padding-top: 100px">
+
+	<div style="padding-left: 1130px;z-index: 1000">
+		<a ng-click="loginShow()">{{logintext}}</a>
+	</div>
+
+	<div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+		<a ng-show="getWelcomeText()" >{{welcometext}}</a>
+	</div>
+
+	<div id='cssmenu' style="position: absolute;z-index: 100; padding-left: 270px">
+		<ul>
+			<li><a href='#Home'><span>Home</span></a></li>
+			<li ng-show="getUserRole() == 'normal' || getUserRole() == 'donar' " >
+				<a href='#Donate'><span>Donate</span></a></li>
+			<li ng-show= "getUserRole() == 'normal'">
+				<a href='#Register'><span>Register</span></a></li>
+			<li><a href='#Faq'><span>FAQ</span></a></li>
+			<li><a href='#AboutUs'><span>About US</span></a></li>
+			<li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+			<li><a href='#Contact'><span>Contact</span></a></li>
+			<li ng-show="getUserRole() == 'family' ">
+				<a href='#ProfileFamily'><span>Profile</span></a>
+			</li>
+			<li ng-show=" getUserRole() == 'donar' ">
+				<a href='#ProfileDonar'><span>Profile</span></a>
+			</li>
+
+		</ul>
+
+	</div>
+
+	<div style="height: 1000px;padding-top: 100px ; padding-left: 250px">
+
+		<table id="admintable"  border="3" style="word-wrap:break-word" >
+			<tr>
+				<td class ="admintable">
+					Family Name
+				</td>
+
+				<td class ="admintable">
+					Child Name
+				</td>
+
+				<td class ="admintable" > WishList
+
+				</td>
+
+				<td class ="admintable"> Biography
+
+				</td>
+
+				<td class ="admintable">Status
+
+				</td>
+				<td class ="admintable" colspan="2" >Admin Action
+
+				</td>
+			</tr>
+
+			<tr ng-repeat="f in family">
+				<td ><div >  {{f.familyname}}</div>
+				</td>
+
+				<td ><div>  {{f.childname}}</div>
+				</td>
+
+				<td ><div>  {{f.wishlist}}</div>
+				</td>
+
+
+				<td ><div>  {{f.biography}}</div>
+				</td>
+
+
+				<td ><div>  {{f.status}}</div>
+				</td>
+
+
+				<td style="padding-left: 4px;padding-top: 5px">
+					<a ng-click="approveWishList(f)" class="btn btn-primary">Approve</a>
+				</td>
+				<td style="padding-left: 4px;padding-top: 5px">
+					<a ng-click="declineWishList(f)" class="btn btn-primary">Decline</a>
+				</td>
+				</td>
+
+			</tr>
+
+		</table>
+
+
+
+	</div>
+</div>
+

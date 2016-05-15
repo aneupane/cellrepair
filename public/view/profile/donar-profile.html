@@ -1,0 +1,80 @@
+<div style="padding-top: 100px">
+
+    <div style="padding-left: 1130px;z-index: 1000">
+        <a ng-click="loginShow()">{{logintext}}</a>
+    </div>
+
+    <div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+        <a ng-show="getWelcomeText()" >{{welcometext}}</a>
+    </div>
+
+
+    <div id='cssmenu' style="position: absolute;z-index: 100 ; padding-left: 270px">
+        <ul>
+            <li><a href='#Home'><span>Home</span></a></li>
+            <li ng-show="getUserRole() == 'normal' || getUserRole() == 'donar' " >
+                <a href='#Donate'><span>Donate</span></a></li>
+            <li ng-show= "getUserRole() == 'normal'">
+                <a href='#Register'><span>Register</span></a></li>
+            <li><a href='#Faq'><span>FAQ</span></a></li>
+            <li><a href='#AboutUs'><span>About US</span></a></li>
+            <li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+            <li><a href='#Contact'><span>Contact</span></a></li>
+            <li ng-show="getUserRole() == 'family' || getUserRole() == 'donar' ">
+            <li ng-show="getUserRole() == 'family' ">
+                <a href='#ProfileFamily'><span>Profile</span></a>
+            </li>
+            <li ng-show=" getUserRole() == 'donar' ">
+                <a href='#ProfileDonar'><span>Profile</span></a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div style="height: 1000px ; padding-top: 100px;padding-left: 300px">
+
+        <div style="padding-left: 300px "><b>View your Transaction Table </b></div>
+
+        <div style="width: 70%;height: 90%;padding-left: 30% ; padding-top: 10px">
+
+            <table border="1">
+                <tr>
+                    <td>
+                        <b>Item Name
+                        </b>
+                    </td>
+                    <td>
+                        <b>
+                            Donated Date
+                        </b>
+                    </td>
+                </tr>
+
+                <tr ng-repeat="p in itemList">
+                    <td >
+                        <div>  {{p.item}}
+                        </div>
+
+                        <!--  <div>
+                              <div>
+                                  <img ng-src="images/{{p.child.image}}" style="width: 50px;height: 50px" />
+                              </div>
+                          </div>-->
+
+                    </td>
+
+                    <td >
+                        <div>
+                            {{p.submittedDate}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
+</div>
+

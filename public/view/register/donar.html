@@ -1,0 +1,97 @@
+<div style="padding-top: 100px">
+
+
+  <div style="padding-left: 1130px;z-index: 1000">
+    <a ng-click="loginShow()">{{logintext}}</a>
+  </div>
+
+  <div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+    <a ng-show="getWelcomeText()" >{{welcometext}}</a>
+  </div>
+
+  <div id='cssmenu' style="position: absolute;z-index: 100 ; padding-left: 270px">
+    <ul>
+      <li><a href='#Home'><span>Home</span></a></li>
+      <li ng-show="getUserRole() == 'normal' || getUserRole() == 'donar' " >
+        <a href='#Donate'><span>Donate</span></a></li>
+      <li ng-show= "getUserRole() == 'normal'">
+        <a href='#Register'><span>Register</span></a></li>
+      <li><a href='#Faq'><span>FAQ</span></a></li>
+      <li><a href='#AboutUs'><span>About US</span></a></li>
+      <li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+      <li><a href='#Contact'><span>Contact</span></a></li>
+      <li ng-show="getUserRole() == 'family' || getUserRole() == 'donar' ">
+        <a href='#Profile'><span>Profile</span></a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div  style="padding-left: 350px;padding-top: 80px">
+    <table style="width: 80%">
+      <tr>
+        <td>
+          <div id="donateForm" style="float: left">
+            <div>
+              <label for="name">Name</label><br/>
+              <input id="name" ng-model="myForm.name" />
+            </div>
+
+            <div >
+              <label for="address">Street</label> <br/>
+              <input id="address" ng-model="myForm.street" />
+            </div>
+
+            <div>
+              <label for="city">City</label> <br/>
+              <input id="city" ng-model="myForm.city" />
+            </div>
+
+
+            <div>
+              <label for="zipcode">Zip Code</label> <br/>
+              <input id="zipcode" ng-model="myForm.zipcode" />
+            </div>
+
+            <div>
+              <label for="phoneno">Phone No</label> <br/>
+              <input id="phoneno" ng-model="myForm.phoneno" />
+            </div>
+
+            <div>
+              <label for="email">Email Address </label> <br/>
+              <input id="email" ng-model="myForm.email" />
+            </div>
+
+            <div>
+              <label for="username" >UserName </label> <br/>
+              <input id="username" ng-model="myForm.username" />
+            </div>
+
+            <div>
+              <label for="password"> Password </label> <br/>
+              <input id="password" type="password" ng-model="myForm.password" >
+            </div>
+          </div>
+
+          <div id="profilepic" style="padding-left: 350px;">
+            Upload Picture <br/>
+            <!--<input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
+
+            <input type="file" id="file" file-model="myForm.donar.picture" />
+            <img ng-src="images/{{myForm.donar.picture.name}}" width="200"  height="250"/><br />
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="padding-left: 550px;padding-top: 20px">
+    <!-- href="#/register/donar/conformation"-->
+    <a ng-click="submitDonar()" class="btn btn-primary">Submit</a>
+  </div>
+</div>
+
+
+

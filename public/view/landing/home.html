@@ -1,0 +1,101 @@
+<div style="padding-top: 100px" ng-controller="HomeController">
+
+    <div style="padding-left: 1130px;z-index: 1000">
+        <a ng-click="loginShow()">{{logintext}}</a>
+    </div>
+
+    <div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+        <a ng-show="getWelcomeText()" >{{welcometext}}</a>
+    </div>
+
+
+    <div id='cssmenu' style="position: absolute;z-index: 100 ; padding-left: 270px">
+        <ul>
+            <li><a href='#Home'><span>Home</span></a></li>
+            <li><a href='#AboutUs'><span>About US</span></a></li>
+            <li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+            <li><a href='#Contact'><span>Contact</span></a></li>
+            <li ng-show="getUserRole() == 'family' ">
+                <a href='#ProfileFamily'><span>Profile</span></a>
+            </li>
+            <li ng-show="getUserRole() == 'donar' ">
+                <a href='#ProfileDonar'><span>Profile</span></a>
+            </li>
+        </ul>
+    </div>
+
+    <div style="height: 1000px">
+        <div style="float: left; width: 70%;padding-top: 100px;padding-left: 100px">
+
+            <table>
+                <tr>
+                    <td>
+                        <h3 class="text-center" ><em>iPhone </em></h3>
+                        <div class="gallery">
+                            <div class="img-wrap">
+                                <img ng-src="images/iphone.jpeg"  style="width: 350px;height: 350px"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="padding-left: 50px">
+
+                        <h3 class="text-center" ><em>Samsung Galaxy</em></h3>
+                        <div class="gallery">
+                            <div class="img-wrap">
+                                <img ng-src="images/samsung.jpeg"  style="width: 350px;height: 350px"/>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <h3 class="text-center"   ><em >iPad </em></h3>
+                        <div>
+                            <div>
+                                <img ng-src="images/ipad.jpg"  style="width: 350px;height: 350px"/>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="padding-left: 50px">
+                        <div class="gallery">
+                            <div class="img-wrap">
+                                <img ng-src="images/ipadair.jpeg"  style="width: 350px;height: 350px"/>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="float: right; width: 30%;padding-top: 250px;padding-left: 40px">
+            <table>
+                <tr>
+                    <td>
+                        <div class="gallery">
+                            <div class="img-wrap text-center">
+                                <img ng-src="images/brokenphone.jpeg"  style="width: 450px;height: 250px"/>
+                            </div>
+                        </div>
+                        <h3 class="text-center" ><em><b>We repair almost everything with Phones</b></em></h3>
+                        <p class="text-center" >We have certified cadidates to repair phones. </p>
+                        <p class="text-center" >We have 5 years of experience as of now. </p>
+                        <p class="text-center" >We serve 90 days warrenty for the things we repaired. </p>
+                        <p class="text-center" >email :   XXXXXXXXX@gmail.com </p>
+                        <p class="text-center" >ph XXX-XXX-XXXX</p>
+                        <p class="text-center" >For details.</p>
+
+
+
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </div>
+    </div>
+</div>
+

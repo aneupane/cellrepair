@@ -1,0 +1,35 @@
+<div style="padding-top: 100px">
+
+    <div style="padding-left: 1130px;z-index: 1000">
+        <a ng-click="loginShow()">{{logintext}}</a>
+    </div>
+
+    <div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+        <a ng-show="getWelcomeText()" >{{welcometext}}</a>
+    </div>
+
+
+    <div id='cssmenu' style="position: absolute;z-index: 100; padding-left: 270px">
+        <ul>
+            <li><a href='#Home'><span>Home</span></a></li>
+            <li><a href='#AboutUs'><span>About US</span></a></li>
+            <li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+            <li><a href='#Contact'><span>Contact</span></a></li>
+        </ul>
+
+    </div>
+
+    <div style="height: 800px ; padding-left: 350px ; padding-top: 100px">
+
+        <b>We are Located in Lonngview texas. We have certified and experienced candidates to help</b> <br/>
+        <b>you repair  your phone at your earliest conveience. Please ship your ph to </b><br/>
+        <b>2149 Gilmer Rd. Longview , TX 75604 </b><br/>
+        <b> Or you can stop by from: </b><br/>
+        <b> 8:00 am - 10:00 pm  everyday </b><br/>
+
+
+        <div style="padding-top: 50px"></div>
+        <img ng-src="images/beforeafter.jpeg" width="500" height="450" /><br />
+    </div>
+</div>
+

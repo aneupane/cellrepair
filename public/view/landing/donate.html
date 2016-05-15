@@ -1,0 +1,84 @@
+<div style="padding-top: 100px" ng-controller="HomeController">
+
+    <div style="padding-left: 1130px;z-index: 1000">
+        <a ng-click="loginShow()">{{logintext}}</a>
+    </div>
+
+    <div style="padding-left: 0px;z-index: 1000 ;position: absolute ;padding-top: -100px">
+        <a ng-show="getWelcomeText()" >{{welcometext}}</a>
+    </div>
+
+    <div id='cssmenu' style="position: absolute;z-index: 100 ; padding-left: 270px">
+        <ul>
+            <li><a href='#Home'><span>Home</span></a></li>
+            <li ng-show="getUserRole() == 'normal' || getUserRole() == 'donar' " >
+                <a href='#Donate'><span>Donate</span></a></li>
+            <li ng-show= "getUserRole() == 'normal'">
+                <a href='#Register'><span>Register</span></a></li>
+            <li><a href='#Faq'><span>FAQ</span></a></li>
+            <li><a href='#AboutUs'><span>About US</span></a></li>
+            <li ng-show="getUserRole() == 'admin' "><a href='#Admin'><span>Admin</span></a></li>
+            <li><a href='#Contact'><span>Contact</span></a></li>
+            <li ng-show="getUserRole() == 'family' ">
+                <a href='#ProfileFamily'><span>Profile</span></a>
+            </li>
+            <li ng-show="getUserRole() == 'family' ">
+                <a href='#ProfileFamily'><span>Profile</span></a>
+            </li>
+            <li ng-show=" getUserRole() == 'donar' ">
+                <a href='#ProfileDonar'><span>Profile</span></a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div style="padding-top: 100px; height: 600px ; padding-left: 100px ; overflow:scroll">
+
+        <div style="padding-left: 440px">
+            <label for="family" style="padding-left: 40px">Select Family </label> <br/>
+            <select style="width: 150px" id="family" ng-options="item as item.name for item in familyList track by item.username"
+                    ng-model="familyusername"
+                    ng-change="updateFamily(familyusername)">
+            </select>
+        </div>
+
+        <div style="padding-left: 480px ; padding-top: 50px">
+            <label >All Family List</label> <br/>
+        </div>
+
+        <div class="list-group middle"  style="height: 90%;width:60%;padding-left: 380px">
+            <!--  Product Container  -->
+            <div class="list-group-item" ng-repeat="family in familyList" >
+
+                <!-- ng-style="myStyle_{{product.price}-->
+                <h3>{{family.name}} <em class="pull-right">{{family.city}}</em></h3>
+                <!-- Image Gallery  -->
+                <div class="gallery">
+                    <div class="img-wrap">
+                        <img ng-src="images/{{family.profilepicture}}"  style="width: 100px;height: 100px"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div>
+</div>
+<div style="padding-left: 570px;padding-top: 20px;">
+    <!--    <a href="#/donate/familydonation" class="btn btn-primary">Select Family </a>-->
+    <a ng-click="getFamily()" class="btn btn-primary">Submit</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
